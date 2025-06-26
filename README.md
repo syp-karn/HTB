@@ -1,1 +1,3 @@
 # HTB
+
+* HackTheBox Machines' writeups
