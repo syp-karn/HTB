@@ -26,4 +26,4 @@ Nmap done: 1 IP address (1 host up) scanned in 24.30 seconds
 ```
 
 
-This box is still active on HackTheBox. Once retired, this writeup will be published for public access as per HackTheBox's policy on publishing content from their platform
+*This box is still active on HackTheBox. Once retired, this writeup will be published for public access as per HackTheBox's policy on publishing content from their platform*
