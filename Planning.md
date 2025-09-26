@@ -32,7 +32,7 @@ Nmap done: 1 IP address (1 host up) scanned in 13.02 seconds
 
 ## Port 80 - Website
 
-![image.png](image.png)
+![image](img/Planning/image.png)
 
 ### Using gobuster to enumerate target
 
@@ -105,7 +105,7 @@ Got `grafana` as a subdomain, and added it to /etc/hosts.
 
 Then viewed the subdomain, and got a login page:- 
 
-![image.png](image%201.png)
+![image](img/Planning/image%201.png)
 
 Used the creds gave in the machine description previously to login `admin:0D5oT70Fq13EvB5r`
 
@@ -119,7 +119,7 @@ The server is running `Grafana 11.0.0` .
 
 Googling ‘Grafana 11.0.0 exploit’ gives us
 
-![image.png](image%202.png)
+![image](img/Planning/image%202.png)
 
 # Exploiting CVE-2024-9264
 
@@ -215,13 +215,13 @@ We got a user’s credentials!
 
 Using that to ssh into the machine, 
 
-![image.png](image%203.png)
+![image](img/Planning/image%203.png)
 
 # Privilege Escalation
 
 Run [`linpeas.sh`](http://linpeas.sh) on the target machine.
 
-![image.png](image%204.png)
+![image](img/Planning/image%204.png)
 
 there’s a crontab.db file.
 
@@ -235,7 +235,7 @@ This gives a password `P4ssw0rdS0pRi0T3c`, but it is not the password for any of
 
 Enumerating further.
 
-![image.png](image%205.png)
+![image](img/Planning/image%205.png)
 
 there’s a webserver running on port 8000
 
@@ -247,19 +247,19 @@ enzo@planning.htb's password:
 
 ```
 
-![image.png](image%206.png)
+![image](img/Planning/image%206.png)
 
 Entering username as `root` and the password as `P4ssw0rdS0pRi0T3c`, logs us into the following screen
 
-![image.png](image%207.png)
+![image](img/Planning/image%207.png)
 
 lets now setup a crontab which will spawn a revshell to our netcat listener:-
 
-![image.png](image%208.png)
+![image](img/Planning/image%208.png)
 
 Executing the cronjob spawns the revshell, and gives us full access as `root`
 
-![image.png](image%209.png)
+![image](img/Planning/image%209.png)
 
 `pwned`
 
